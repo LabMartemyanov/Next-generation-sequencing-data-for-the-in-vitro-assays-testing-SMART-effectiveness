@@ -1,0 +1,10 @@
+# Recalculate the count of rows for each value between 0 and 16 again
+
+# Count the occurrences of each value in the relevant column (assumed to be the first one)
+value_counts_full_range = new_df.iloc[:, 0].value_counts().sort_index()
+
+# Prepare the counts for the specific range from 0 to 16
+result_full_range = {i: value_counts_full_range.get(i, 0) for i in range(17)}
+
+# Display the results to the user
+result_full_range

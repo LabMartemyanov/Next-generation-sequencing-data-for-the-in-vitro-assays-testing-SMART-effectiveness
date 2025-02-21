@@ -1,0 +1,21 @@
+import pandas as pd
+
+# Load the uploaded file
+file_path = '/mnt/data/145K_extracted_sequences.xlsx'
+df = pd.read_excel(file_path)
+
+# Define a function to calculate the sum of 'CC' in the first 22 nucleotides and 'GG' in the last 22 nucleotides
+def calculate_cc_gg_sum(sequence):
+    first_22 = sequence[:22]
+    last_22 = sequence[-22:]
+    
+    cc_count = count_overlapping_substring(first_22, 'CC')
+    gg_count = count_overlapping_substring(last_22, 'GG')
+    
+    return cc_count + gg_count
+
+# Apply the function to each row (excluding the first row)
+df['CC_GG_Sum'] = df.iloc[1:].apply(lambda row: calculate_cc_gg_sum(row[0]), axis=1)
+
+# Display the updated DataFrame to the user
+import ace_tools as tools; tools.display_dataframe_to_user(name="Updated Sequences with CC_GG_Sum", dataframe=df)
