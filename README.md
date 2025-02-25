@@ -1,2 +1,4 @@
 # Next-generation-sequencing-data-for-the-in-vitro-assays-testing-SMART-effectiveness
 Supplementary Python code data for manuscript "Efficient in vivo labeling of endogenous proteins with SMART delineates retina cellular and synaptic organization".
+
+This project assesses the availability of nearby PAM sites by studying putative modification sites randomly picked across the coding regions of the human genome. Our analysis revealed that 8.2% of these sites lacked any PAM sites within 10 bp of the target location. On average, there are 3 PAM sites available per site, with two being the most common. Here, we provide the python code to do this analysis. Martemyanov lab maintains and contributes to the project. To get help from this project, please contact Kirill Martemyanov (kmartemyanov@ufl.edu). 
